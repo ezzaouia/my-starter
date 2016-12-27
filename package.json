@@ -1,12 +1,22 @@
 {
   "name": "my-starter",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "",
-  "main": "index.js",
+  "author": "mohamed ezzaouia <ezzaouia.mohamed@gmail.com>",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "webpack"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "keywords": [
+    "webpack",
+    "typescript"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "awesome-typescript-loader": "^3.0.0-beta.17",
+    "html-webpack-plugin": "^2.24.1",
+    "raw-loader": "^0.5.1",
+    "typescript": "^2.1.4",
+    "webpack": "^2.2.0-rc.2",
+    "webpack-merge": "^2.0.0"
+  }
 }
