@@ -6,8 +6,7 @@
   "scripts": {
     "build": "webpack",
     "hotdev": "npm run dev -- --hot --inline",
-    "dev": "webpack-dev-server --config ./config/webpack/webpack-dev.config.js --no-info --colors",
-    "webpack-dev-server": "webpack-dev-server"
+    "dev": "webpack-dev-server --no-info --colors"
   },
   "keywords": [
     "webpack",
