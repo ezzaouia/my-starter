@@ -5,7 +5,9 @@
   "author": "mohamed ezzaouia <ezzaouia.mohamed@gmail.com>",
   "scripts": {
     "build": "webpack",
-    "server:dev": "webpack-dev-server --config config/webpack-dev.config.js --progress --profile --watch --content-base src/"
+    "hotdev": "npm run dev -- --hot --inline",
+    "dev": "webpack-dev-server --config config/webpack-dev.config.js --progress --profile --watch --content-base src/",
+    "webpack-dev-server": "webpack-dev-server"
   },
   "keywords": [
     "webpack",
