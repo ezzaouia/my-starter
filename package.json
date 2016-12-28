@@ -4,7 +4,8 @@
   "description": "",
   "author": "mohamed ezzaouia <ezzaouia.mohamed@gmail.com>",
   "scripts": {
-    "build": "webpack"
+    "build": "webpack",
+    "server:dev": "webpack-dev-server --config config/webpack-dev.config.js --progress --profile --watch --content-base src/"
   },
   "keywords": [
     "webpack",
@@ -14,9 +15,14 @@
   "devDependencies": {
     "awesome-typescript-loader": "^3.0.0-beta.17",
     "html-webpack-plugin": "^2.24.1",
+    "node-sass": "^4.1.1",
     "raw-loader": "^0.5.1",
+    "sass-loader": "^4.1.1",
+    "scss-loader": "0.0.1",
+    "style-loader": "^0.13.1",
     "typescript": "^2.1.4",
     "webpack": "^2.2.0-rc.2",
+    "webpack-dev-server": "^2.2.0-rc.0",
     "webpack-merge": "^2.0.0"
   }
 }

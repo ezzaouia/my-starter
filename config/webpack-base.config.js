@@ -6,7 +6,6 @@
 // A bit of imports
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ContextReplacementPlugin = require('webpack/lib/ContextReplacementPlugin');
 
 const helpers = require('../utils/helpers');
 
@@ -29,6 +28,10 @@ module.exports = {
         test: /\.html$/,
         use: 'raw-loader',
         exclude: [helpers.root('src/index.html')]
+      },
+      {
+        test: /\.scss$/,
+        use: ['style-loader', 'css-loader', 'sass-loader',]
       }
     ]
   },
