@@ -1,4 +1,9 @@
 import './styles.scss'
 
-var htmlElementAPP = document.getElementById('app');
-htmlElementAPP.innerHTML = '<p>sdfkdsk dfkgf</p>'
+class Person {
+  constructor() { }
+
+  sayHi(name: string) {
+    console.log('Hi ' + name)
+  }
+}

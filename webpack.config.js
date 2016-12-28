@@ -1,24 +1,21 @@
+'use strict';
 /**
  * @author: @Med'eZ
  */
-'use strict';
 
+// A bit of imports
+const helpers = require('./utils/helpers');
 
 // load webpack config by env: dev || prod || test
 switch (process.env.NODE_ENV) {
   case 'prod':
-    exportConfig('./config/webpack-prod.config');
+    helpers.exportModule(helpers.getWebpackEnvConf('prod'));
     break;
   case 'test':
-    exportConfig('./config/webpack-test.config');
+    helpers.exportModule(helpers.getWebpackEnvConf('test'));
     break;
   case 'dev':
   default:
-    exportConfig('./config/webpack-dev.config');
+    helpers.exportModule(helpers.getWebpackEnvConf('dev'));
     break;
-}
-
-// helper function
-function exportConfig(envConfigFilename) {
-  module.exports = require(envConfigFilename)
 }

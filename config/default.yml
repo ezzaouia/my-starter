@@ -1,0 +1,32 @@
+##
+# @author: @Med'eZ
+#
+
+# Application config
+# -------------------
+app:
+  title: My starter @Med'eZ
+  template: src/index.html
+  src_folder: src
+  main_file: main.ts
+  description: ''
+
+# Build & Bundle config
+# -------------------
+build:
+  dist_folder: dist
+  js_bundle_name: bundle.js
+
+# Env config
+# -------------------
+env:
+  dev: &dev
+    host: localhost
+    port: 3000
+
+  prod:
+    <<: *dev
+
+  test:
+    <<: *dev
+

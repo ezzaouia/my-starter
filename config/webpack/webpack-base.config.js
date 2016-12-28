@@ -1,22 +1,23 @@
+'use strict';
 /**
  * @author: @Med'eZ
  */
-'use strict';
 
 // A bit of imports
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const config = require('config')
 
-const helpers = require('../utils/helpers');
+const helpers = require('../../utils/helpers');
 
 // webpack config
 module.exports = {
   entry: {
-    'main': 'main.ts'
+    'main': config.get('app.main_file')
   },
   resolve: {
     extensions: ['.ts', '.js', '.json'],
-    modules: [helpers.root('src'), helpers.root('node_modules')]
+    modules: [helpers.root(config.get('app.src_folder')), helpers.root('node_modules')]
   },
   module: {
     rules: [
@@ -27,7 +28,7 @@ module.exports = {
       {
         test: /\.html$/,
         use: 'raw-loader',
-        exclude: [helpers.root('src/index.html')]
+        exclude: [helpers.root(config.get('app.template'))]
       },
       {
         test: /\.scss$/,
@@ -37,8 +38,13 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'My starter @Med\'eZ',
-      template: 'src/index.html'
+      title: config.get('app.title'),
+      template: config.get('app.template'),
     })
-  ]
+  ],
+  performance: {
+    hints: "warning",
+    maxAssetSize: 300000,
+    maxEntrypointSize: 400000
+  }
 }

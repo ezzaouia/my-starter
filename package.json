@@ -6,7 +6,7 @@
   "scripts": {
     "build": "webpack",
     "hotdev": "npm run dev -- --hot --inline",
-    "dev": "webpack-dev-server --config config/webpack-dev.config.js --progress --profile --watch --content-base src/",
+    "dev": "webpack-dev-server --config ./config/webpack/webpack-dev.config.js --no-info --colors",
     "webpack-dev-server": "webpack-dev-server"
   },
   "keywords": [
@@ -16,7 +16,9 @@
   "license": "MIT",
   "devDependencies": {
     "awesome-typescript-loader": "^3.0.0-beta.17",
+    "config": "^1.24.0",
     "html-webpack-plugin": "^2.24.1",
+    "js-yaml": "^3.7.0",
     "node-sass": "^4.1.1",
     "raw-loader": "^0.5.1",
     "sass-loader": "^4.1.1",
