@@ -5,11 +5,13 @@
 # Application config
 # -------------------
 app:
+  app_name: emodash
   title: My starter @Med'eZ
   template: src/index.html
   src_folder: src
-  main_file: main.ts
   description: ''
+  main_file: main.ts
+  vendors_file: vendors.browser.ts
 
 # Build & Bundle config
 # -------------------
