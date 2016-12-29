@@ -25,11 +25,11 @@ module.exports = {
     rules: [
       {
         test: /\.ts$/,
-        use: ['awesome-typescript-loader']
+        use: ['ng-annotate-loader', 'awesome-typescript-loader']
       },
       {
         test: /\.html$/,
-        use: 'raw-loader',
+        use: ['raw-loader'],
         exclude: [helpers.root(config.get('app.template'))]
       },
       {

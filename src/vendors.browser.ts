@@ -8,6 +8,9 @@ import 'jquery';
 // angular
 import 'angular';
 
+// angular-ui-router
+import 'angular-ui-router'
+
 // angular material
 import 'angular-animate';
 import 'angular-aria';
