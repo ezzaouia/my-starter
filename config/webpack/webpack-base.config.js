@@ -13,7 +13,9 @@ const helpers = require('../../utils/helpers');
 // webpack config
 module.exports = {
   entry: {
+    'vendors': config.get('app.vendors_file'),
     'main': config.get('app.main_file')
+
   },
   resolve: {
     extensions: ['.ts', '.js', '.json'],
@@ -33,6 +35,10 @@ module.exports = {
       {
         test: /\.scss$/,
         use: ['style-loader', 'css-loader', 'sass-loader',]
+      },
+      {
+        test: /\.(eot|svg|ttf|woff|woff2)$/,
+        use: 'file-loader'
       }
     ]
   },
@@ -44,7 +50,7 @@ module.exports = {
   ],
   performance: {
     hints: "warning",
-    maxAssetSize: 300000,
-    maxEntrypointSize: 400000
+    maxAssetSize: 10000000,
+    maxEntrypointSize: 10000000
   }
 }
