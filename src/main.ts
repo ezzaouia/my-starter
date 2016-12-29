@@ -1,9 +1,9 @@
-import './styles.scss'
+/**
+ * @author: @Med'eZ
+ */
+import { bootstrap } from 'angular';
+import { element } from 'angular';
+import './app'
+import './styles.scss';
 
-class Person {
-  constructor() { }
-
-  sayHi(name: string) {
-    console.log('Hi ' + name)
-  }
-}
+element(document).ready(() => bootstrap(document, ['app']));
