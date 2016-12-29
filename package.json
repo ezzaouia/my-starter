@@ -14,8 +14,14 @@
   ],
   "license": "MIT",
   "devDependencies": {
+    "@types/angular": "^1.5.22",
+    "@types/angular-material": "^1.1.43",
+    "@types/node": "^6.0.54",
+    "@types/source-map": "^0.5.0",
+    "@types/webpack": "^2.0.0",
     "awesome-typescript-loader": "^3.0.0-beta.17",
     "config": "^1.24.0",
+    "file-loader": "^0.9.0",
     "html-webpack-plugin": "^2.24.1",
     "js-yaml": "^3.7.0",
     "node-sass": "^4.1.1",
@@ -27,5 +33,16 @@
     "webpack": "^2.2.0-rc.2",
     "webpack-dev-server": "^2.2.0-rc.0",
     "webpack-merge": "^2.0.0"
+  },
+  "dependencies": {
+    "angular": "^1.6.1",
+    "angular-animate": "^1.6.1",
+    "angular-aria": "^1.6.1",
+    "angular-material": "^1.1.1",
+    "angular-material-icons": "^0.7.1",
+    "d3": "^3.5.17",
+    "font-awesome": "^4.7.0",
+    "jquery": "^3.1.1",
+    "lodash": "^3.10.1"
   }
 }
