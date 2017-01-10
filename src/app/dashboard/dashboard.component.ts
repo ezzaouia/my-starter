@@ -10,10 +10,7 @@ export class DashboardComponent {
 
   constructor() {
     this.restrict = 'E';
-    this.template = `
-      <dashboard-toolbar></dashboard-toolbar>
-      {{$ctrl.audioEmotions}}
-    `;
+    this.template = require('./dashboard.component.html');
     this.controller = DashboardController;
 
   }
@@ -32,7 +29,7 @@ class DashboardController {
         this.audioEmotions = res.data;
       }, (err) => {
         this.$log.debug(err);
-      });;
+      });
   }
 
   public $onInit(): void {

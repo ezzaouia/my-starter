@@ -20,8 +20,6 @@ import 'angular-material/angular-material.scss';
 // angular icon
 import 'angular-material-icons';
 
-import 'material-design-icons';
-
 // fontawesome
 //import 'font-awesome/scss/font-awesome.scss';
 
