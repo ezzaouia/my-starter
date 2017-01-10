@@ -19,20 +19,55 @@ export class DashboardComponent {
 class DashboardController {
   'ngInject';
   audioEmotions: any;
+  videoEmotions: any;
+  selfReportEmotions: any;
 
   constructor(private $log: any, private dashboardService: DashboardService) {
     this.$log = $log.getInstance('DashboardController');
-
-    this.audioEmotions = dashboardService.getAudioEmotions()
-      .then((res) => {
-        this.$log.debug(res.data);
-        this.audioEmotions = res.data;
-      }, (err) => {
-        this.$log.debug(err);
-      });
   }
 
   public $onInit(): void {
     this.$log.debug('onInit')
+    // load data here
+    this.loadJSONData();
+  }
+
+  /**
+   * Load JSON data (audio, video, self-report and sessions' interactions)
+   * Save data in class members.
+   */
+  loadJSONData() {
+    this.$log.debug('Start loading data..');
+    // audio
+    this.audioEmotions = this.dashboardService.getAudioEmotions()
+      .then((res) => {
+        this.audioEmotions = res.data;
+      }, (err) => {
+        this.$log.debug(err);
+      });
+
+    // video
+    this.videoEmotions = this.dashboardService.getVideoEmotions()
+      .then((res) => {
+        this.audioEmotions = res.data;
+      }, (err) => {
+        this.$log.debug(err);
+      });
+
+    // self-report
+    this.videoEmotions = this.dashboardService.getSelfReportEmotions()
+      .then((res) => {
+        this.audioEmotions = res.data;
+      }, (err) => {
+        this.$log.debug(err);
+      });
+
+    // sessions' interactions
+    this.videoEmotions = this.dashboardService.getSessionsInteractions()
+      .then((res) => {
+        this.audioEmotions = res.data;
+      }, (err) => {
+        this.$log.debug(err);
+      });
   }
 }
