@@ -11,7 +11,7 @@ export class DashboardService {
   }
 
   /**
-   * Return audio emotion from json file
+   * Return Promise: audio emotion from json file
    */
   getAudioEmotions() {
     this.$log.debug('getAudioEmotions')
@@ -19,19 +19,27 @@ export class DashboardService {
   }
 
   /**
-  * Return audio emotion from json file
+  * Return Promise: video emotion from json file
   */
   getVideoEmotions() {
-    this.$log.debug('getAudioEmotions')
+    this.$log.debug('getVideoEmotions')
     return this.$http.get('assets/data/emovideos.json');
   }
 
   /**
-  * Return audio emotion from json file
+  * Return Promise: self-report emotion from json file
   */
   getSelfReportEmotions() {
-    this.$log.debug('getAudioEmotions')
-    return this.$http.get('assets/data/emoaudios.json');
+    this.$log.debug('getSelfReportEmotions')
+    return this.$http.get('assets/data/emoselfreporteds.json');
+  }
+
+  /**
+ * Return Promise: sessions' interactions from json file
+ */
+  getSessionsInteractions() {
+    this.$log.debug('getSessionsInteractions')
+    return this.$http.get('assets/data/emosessioninteractions.json');
   }
 }
 
