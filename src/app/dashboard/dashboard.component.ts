@@ -21,6 +21,7 @@ class DashboardController {
   audioEmotions: any;
   videoEmotions: any;
   selfReportEmotions: any;
+  sessionsInteractions: any;
 
   constructor(private $log: any, private dashboardService: DashboardService) {
     this.$log = $log.getInstance('DashboardController');
@@ -51,7 +52,7 @@ class DashboardController {
       // video
       this.dashboardService.getVideoEmotions()
         .then((res) => {
-          this.audioEmotions = res.data;
+          this.videoEmotions = res.data;
         }, (err) => {
           this.$log.error(err);
         });
@@ -59,7 +60,7 @@ class DashboardController {
       // self-report
       this.dashboardService.getSelfReportEmotions()
         .then((res) => {
-          this.audioEmotions = res.data;
+          this.selfReportEmotions = res.data;
         }, (err) => {
           this.$log.error(err);
         });
@@ -67,7 +68,7 @@ class DashboardController {
       // sessions' interactions
       this.dashboardService.getSessionsInteractions()
         .then((res) => {
-          this.audioEmotions = res.data;
+          this.sessionsInteractions = res.data;
         }, (err) => {
           this.$log.error(err);
         });
