@@ -29,7 +29,7 @@ class DashboardController {
   public $onInit(): void {
     this.$log.debug('onInit')
     // load data here
-    this.loadJSONData();
+     this.loadJSONData();
   }
 
   /**
@@ -37,37 +37,40 @@ class DashboardController {
    * Save data in class members.
    */
   loadJSONData() {
-    this.$log.debug('Start loading data..');
-    // audio
-    this.audioEmotions = this.dashboardService.getAudioEmotions()
-      .then((res) => {
-        this.audioEmotions = res.data;
-      }, (err) => {
-        this.$log.debug(err);
-      });
+    //return new Promise<void>(resolve => {
+      // async code goes here
+      this.$log.debug('Start loading data..');
+      // audio
+      this.dashboardService.getAudioEmotions()
+        .then((res) => {
+          this.audioEmotions = res.data;
+        }, (err) => {
+          this.$log.error(err);
+        });
 
-    // video
-    this.videoEmotions = this.dashboardService.getVideoEmotions()
-      .then((res) => {
-        this.audioEmotions = res.data;
-      }, (err) => {
-        this.$log.debug(err);
-      });
+      // video
+      this.dashboardService.getVideoEmotions()
+        .then((res) => {
+          this.audioEmotions = res.data;
+        }, (err) => {
+          this.$log.error(err);
+        });
 
-    // self-report
-    this.videoEmotions = this.dashboardService.getSelfReportEmotions()
-      .then((res) => {
-        this.audioEmotions = res.data;
-      }, (err) => {
-        this.$log.debug(err);
-      });
+      // self-report
+      this.dashboardService.getSelfReportEmotions()
+        .then((res) => {
+          this.audioEmotions = res.data;
+        }, (err) => {
+          this.$log.error(err);
+        });
 
-    // sessions' interactions
-    this.videoEmotions = this.dashboardService.getSessionsInteractions()
-      .then((res) => {
-        this.audioEmotions = res.data;
-      }, (err) => {
-        this.$log.debug(err);
-      });
+      // sessions' interactions
+      this.dashboardService.getSessionsInteractions()
+        .then((res) => {
+          this.audioEmotions = res.data;
+        }, (err) => {
+          this.$log.error(err);
+        });
+    //});
   }
 }
