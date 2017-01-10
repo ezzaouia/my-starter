@@ -5,7 +5,7 @@
   "author": "mohamed ezzaouia <ezzaouia.mohamed@gmail.com>",
   "scripts": {
     "build": "webpack",
-    "hotdev": "npm run dev -- --hot --inline",
+    "hotdev": "npm run dev -- ",
     "dev": "webpack-dev-server --no-info --colors"
   },
   "keywords": [
@@ -16,6 +16,7 @@
   "devDependencies": {
     "@types/angular": "^1.5.22",
     "@types/angular-material": "^1.1.43",
+    "@types/angular-toastr": "^1.6.30",
     "@types/node": "^6.0.54",
     "@types/source-map": "^0.5.0",
     "@types/webpack": "^2.0.0",
@@ -39,8 +40,10 @@
     "angular": "^1.6.1",
     "angular-animate": "^1.6.1",
     "angular-aria": "^1.6.1",
+    "angular-logger": "^1.3.2",
     "angular-material": "^1.1.1",
     "angular-material-icons": "^0.7.1",
+    "angular-toastr": "^2.1.1",
     "angular-ui-router": "^1.0.0-beta.3",
     "d3": "^3.5.17",
     "font-awesome": "^4.7.0",

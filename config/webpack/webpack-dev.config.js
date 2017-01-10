@@ -2,6 +2,7 @@
 /**
  * @author: @Med'eZ
  */
+const webpack = require('webpack');
 const WebpackMerge = require('webpack-merge');
 const config = require('config');
 
@@ -16,11 +17,13 @@ module.exports = WebpackMerge(WebpackBaseConfig, {
     sourceMapFilename: '[name].map'
   },
   plugins: [
-
+    new webpack.HotModuleReplacementPlugin()
   ],
   devServer: {
     contentBase: helpers.root(config.get('app.src_folder')),
     compress: true,
+    hot: true,
+    inline: true,
     port: process.env.PORT || config.get('env.dev.port'),
     host: process.env.HOST || config.get('env.dev.host'),
     watchOptions: {

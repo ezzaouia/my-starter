@@ -1,0 +1,33 @@
+<md-toolbar class="md-toolbar-home md-whiteframe-glow-z1">
+  <div class="md-toolbar-tools">
+    <md-button class="toolbar-button" aria-label="Notifications">
+      <i class="material-icons md-36" style="color: grey" >account_circle</i>
+</md-button>
+<span flex></span>
+<!-- arousal threshold -->
+<md-select class="md-select-body" placeholder="Arousal thresholds" ng-model="vm.selectedArousalThreshold" ng-change="vm.addAudioMarkers()"
+  md-on-close="">
+  <md-optgroup label="Arousal thresholds">
+    <md-option ng-value="arousalThreshold" ng-repeat="arousalThreshold in [10, 20, 30, 40, 50]">
+      {{arousalThreshold}}
+    </md-option>
+  </md-optgroup>
+</md-select>
+<!-- Sessions -->
+<md-select class="md-select-body" placeholder="Learning sessions" ng-model="vm.selectedSpSessions" ng-change="vm.applyFilter()"
+  md-on-close="">
+  <md-optgroup label="Sessions">
+    <md-option ng-value="session" ng-repeat="session in vm.spSessions">{{session}}</md-option>
+  </md-optgroup>
+</md-select>
+
+<md-button class="toolbar-button" aria-label="Thumb up">
+  <i class="material-icons">sentiment_satisfied</i>
+  <span class="success-notifications-label">20</span>
+</md-button>
+<md-button class="toolbar-button" aria-label="Notifications">
+  <i class="material-icons">sentiment_dissatisfied</i>
+  <span class="warning-notifications-label">18</span>
+</md-button>
+</div>
+</md-toolbar>

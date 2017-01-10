@@ -18,13 +18,17 @@ import 'angular-material';
 import 'angular-material/angular-material.scss';
 
 // angular icon
-import 'angular-material-icons'
+import 'angular-material-icons';
+
+import 'material-design-icons';
 
 // fontawesome
-import 'font-awesome/scss/font-awesome.scss';
+//import 'font-awesome/scss/font-awesome.scss';
+
+import 'angular-logger';
 
 // d3js
-import 'd3'
+import 'd3';
 
 // lodash
-import 'lodash'
+import 'lodash';
